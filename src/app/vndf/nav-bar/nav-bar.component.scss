@@ -1,0 +1,33 @@
+.main-content__left-box {
+  position: relative;
+  padding: 35px 0 0 42px;
+  background: rgb(116 184 22 / 50%);
+  border-radius: 12px 0px 0px 12px;
+  width: 100%;
+  height: 940px;
+}
+
+.main-content__left-info {
+  margin-bottom: 30px;
+}
+
+.main-content__left-info table {
+  font-size: 15px;
+}
+
+.main-content__left-info table td {
+  padding-bottom: 28px;
+}
+
+.col-info {
+  font-weight: 600;
+  padding-left: 23px;
+}
+
+.main-content__left-option .option {
+  display: flex;
+}
+
+.main-content__left-option .option .option-icon {
+  padding-right: 32px;
+}

@@ -1,0 +1,47 @@
+<div class="main-content__right-box">
+  <div class="row align-items-start ">
+    <div class="col-12 main-content__right-header">
+      <swiper (swiper)="thumbsSwiper = $event" [spaceBetween]="0" [slidesPerView]="3" [freeMode]="false"
+        [watchSlidesProgress]="true" id="sync2" class="mySwiper">
+        <ng-template swiperSlide>
+          <h3>Flavour</h3>
+        </ng-template>
+        <ng-template swiperSlide>
+          <h3>VDU</h3>
+        </ng-template>
+        <ng-template swiperSlide>
+          <h3>VNF Indicator</h3>
+        </ng-template>
+      </swiper>
+    </div>
+    <div
+      class="col-12 main-content__right-search d-flex justify-content-lg-end justify-content-xs-center justify-content-sm-around align-items-center ">
+      <div class="pad-left search-icon-box">
+        <app-search-box></app-search-box>
+      </div>
+      <div class="pad-left filter"><img src="../../../assets/icon/filter.png" alt=""></div>
+      <div class="pad-left change-view"><img src="../../../assets/icon/view-block.png" alt="">
+      </div>
+    </div>
+    <div class="col-12 main-content__right-product d-flex justify-content-end align-items-center p-0 ">
+      <swiper [spaceBetween]="0" [slidesPerView]="1" [initialSlide]="1" [navigation]="false" [thumbs]="{ swiper: thumbsSwiper }"
+        class="mySwiper2">
+        <ng-template swiperSlide>
+          <div id="flavour" class="row products g-2">
+            <app-card></app-card>
+          </div>
+        </ng-template>
+        <ng-template swiperSlide>
+          <div id="vdu" class="row products g-2">
+            <app-card></app-card>
+          </div>
+        </ng-template>
+        <ng-template swiperSlide>
+          <div id="vnf" class="row products g-2">
+            <app-card></app-card>
+          </div>
+        </ng-template>
+      </swiper>
+    </div>
+  </div>
+</div>
