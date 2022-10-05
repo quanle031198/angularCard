@@ -1,49 +1,30 @@
-
-<div class="rend">
-  <div class="row products g-2">
-    <!-- <div *ngFor="let item of items" class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-12">
-      <div  class="box-product">
-        <div class="title-product">
-          <h4> {{item.name}} - {{item.category}} </h4>
-        </div>
-        <div class="describe-product">
-          <div class="row list-describe">
-            <div class="col-6 d-flex">
-              <img src="assets/icon/computer-chip-1.png" alt="">
-              <p>{{item.chip}}</p>
-            </div>
-            <div class="col-6 d-flex">
-              <img src="assets/icon/hard-drive-2.png" alt="">
-              <p>{{item.memory}}</p>
-            </div>
-            <div class="col-6 d-flex">
-              <img src="assets/icon/computer-ram-1.png" alt="">
-              <p>{{item.ram}}</p>
-            </div>
-            <div class="col-6 d-flex">
-              <img src="assets/icon/computer-monitor-svgrepo-com1.png" alt="">
-              <p>{{item.motion}}</p>
-            </div>
-
+<div class="row rend products g-2">
+  <div *ngFor="let itemCard of itemCards " class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-12">
+    <div class="box-product">
+      <div class="title-product">
+        <h4> {{itemCard.name}} - {{itemCard.category}} </h4>
+      </div>
+      <div class="describe-product">
+        <div class="row list-describe">
+          <div class="col-6 d-flex">
+            <img src="assets/icon/computer-chip-1.png" alt="">
+            <p>{{itemCard.chip}}</p>
           </div>
+          <div class="col-6 d-flex">
+            <img src="assets/icon/hard-drive-2.png" alt="">
+            <p>{{itemCard.memory}}</p>
+          </div>
+          <div class="col-6 d-flex">
+            <img src="assets/icon/computer-ram-1.png" alt="">
+            <p>{{itemCard.ram}}</p>
+          </div>
+          <div class="col-6 d-flex">
+            <img src="assets/icon/computer-monitor-svgrepo-com1.png" alt="">
+            <p>{{itemCard.motion}}</p>
+          </div>
+
         </div>
       </div>
-    </div> -->
-  </div>
-
-</div>
-
-<div class="pagination-side">
-  <div class="row align-items-start ">
-    <div class="col-12">
-      <nav class="pagination-container">
-
-
-        <div class="pagination-numbers-cls d-1">
-
-        </div>
-
-      </nav>
     </div>
   </div>
 </div>

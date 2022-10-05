@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-search-box',
@@ -6,17 +6,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-box.component.scss']
 })
 export class SearchBoxComponent implements OnInit {
-  fullname :any;
+
+  @Input() listCardSearch:any;
+  @Output() dataSearchEvents = new EventEmitter<any>()
+
   constructor() { }
 
   ngOnInit(): void {
-  }
-  Search(){
-    if(this.fullname == ""){
-      console.log("k");
 
-    }else {
-      
-    }
   }
+
+  searchEvents(txtSearch:any){
+    let searchInput =  txtSearch.target.value.trim().toUpperCase();
+    let newArrSearch = this.listCardSearch.filter((s:any) => {
+        if (s.name.toUpperCase().includes(searchInput)) {
+            return s;
+        }
+    })
+    this.dataSearchEvents.emit(newArrSearch)
+
+
+
+  }
+
+
 }

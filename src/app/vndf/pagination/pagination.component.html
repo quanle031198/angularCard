@@ -1,0 +1,18 @@
+<div class="pagination-side">
+    <div class="row align-items-start ">
+        <div class="col-12">
+            <nav class="pagination-container">
+
+                <div class="pagination-numbers-cls d-2">
+                    <div class="pagination-render g-2">
+                        <button *ngFor="let num of counter(numbers) ;let i = index" [attr.data-index]="i+1" class="pagination-number" (click)="handleNum(i+1)" >
+                          {{i+1}}
+            </button>
+                    </div>
+                </div>
+
+            </nav>
+        </div>
+    </div>
+</div>
+<div ></div>

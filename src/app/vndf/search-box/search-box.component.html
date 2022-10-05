@@ -4,6 +4,5 @@
       <img src="../../../assets/icon/search-icon.png" alt="">
 
   </div>
-  <input id="searchinput" name="fullname" [(ngModel)]="fullname" (ngModelChange)="Search()" type="text" class="search-input" placeholder="Tìm kiếm...">
-
+  <input id="searchIp" name="searchinput" type="text" class="search-input" (input)="searchEvents($event)" placeholder="Tìm kiếm...">
 </div>

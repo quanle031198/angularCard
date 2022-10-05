@@ -9,7 +9,7 @@ export class DisplayPrdService {
 
   constructor(private http:HttpClient) { }
 
-  url: string = "http://localhost:4200/Prodcucts";
+  url: string = "http://localhost:3000/Products";
   getProducts(){
     return this.http.get<Products[]>(this.url);
   }

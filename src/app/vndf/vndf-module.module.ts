@@ -5,7 +5,8 @@ import { ContentComponent } from './content/content.component';
 import { CardComponent } from './card/card.component';
 import { HeadComponent } from './head/head.component';
 import { SearchBoxComponent } from './search-box/search-box.component';
-import { ListCardComponent } from './list-card/list-card.component';
+// import { ListCardComponent } from './list-card/list-card.component';
+import { PaginationComponent } from './pagination/pagination.component';
 
 
 
@@ -16,7 +17,7 @@ import { ListCardComponent } from './list-card/list-card.component';
     CardComponent,
     HeadComponent,
     SearchBoxComponent,
-    ListCardComponent
+    PaginationComponent
   ],
   imports: [
     CommonModule,

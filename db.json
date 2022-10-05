@@ -1,5 +1,5 @@
 {
-  "Prodcucts": [
+  "Products": [
 
 {"name": "mustangm10", "chip": "1 vCPU x86", "memory": "1TB HDD", "ram": "1 vCPU x86", "motion": 4, "category": "flavour"},
 {"name": "lexuscr7", "chip": "1 vCPU x86", "memory": "1TB HDD", "ram": "1 vCPU x86", "motion": 4, "category": "flavour"},
