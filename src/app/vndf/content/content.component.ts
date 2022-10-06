@@ -27,7 +27,6 @@ export class ContentComponent implements OnInit {
   primitiveData: Array<Card> = [];
   listOfItems: any = [];
   currentPage = 1;
-  totalPage = 0;
   paginatedData: any;
   dataByCategory: any;
   theNewCurrentPage :any;
@@ -39,7 +38,6 @@ export class ContentComponent implements OnInit {
   ngOnInit(): void {
     this.primitiveData = this.renderSampleData();
     this.filterByCategory();
-
   }
 
   renderSampleData = (amountOfModels = 80
@@ -84,6 +82,7 @@ export class ContentComponent implements OnInit {
       return result;
     }
 
+    totalPage = 0;
 
 
   filterByCategory(category: string = 'vdu'){
@@ -99,34 +98,17 @@ export class ContentComponent implements OnInit {
 
   handleNumPage(newCurrent:any){
     this.theNewCurrentPage = newCurrent;
-    this.handleActivePageNumber();
     this.paginatedData = this.paginate(this.dataByCategory, newCurrent);
     this.listOfItems = this.paginatedData.data;
+    console.log(this.listOfItems);
 
-    // this.totalPage = this.paginatedData.totalPage;
-
-  }
-
-  handleActivePageNumber(){
-
-    document.querySelectorAll(".pagination-number").forEach((button) => {
-      button.classList.remove("active");
-      const pageIndex = Number(button.getAttribute("data-index"));
-
-      if (pageIndex === this.theNewCurrentPage) {
-          button.classList.add("active");
-      }
-  })
 
   }
 
   searchEvent(dataProductSearch: any){
-
     this.paginatedData = this.paginate(dataProductSearch,this.currentPage);
-    console.log(this.paginatedData);
     this.listOfItems = this.paginatedData.data;
-    // this.totalPage = this.paginatedData.totalPage;
-
+    this.totalPage = this.paginatedData.totalPage;
   }
 
 }

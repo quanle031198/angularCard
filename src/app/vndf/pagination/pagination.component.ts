@@ -6,21 +6,25 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./pagination.component.scss']
 })
 export class PaginationComponent implements OnInit {
-  @Input() numPage:any  ;
+  @Input() numPage = 0  ;
 
   @Output() numPageEvent = new EventEmitter<any>();
   clickNum : any
-  numbers:any
   status: boolean = false;
+
+  bntStyle: string | undefined;
   constructor() { }
 
   counter(numbers: number) {
     return new Array(numbers);
   }
   ngOnInit(): void {
-    this.numbers = this.numPage
   }
+
+  selectedIndex: number = 1;
+
   handleNum(num: number) {
+    this.selectedIndex = num;
     this.numPageEvent.emit(num);
   }
 
