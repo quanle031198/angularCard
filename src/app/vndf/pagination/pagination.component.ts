@@ -1,16 +1,16 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-pagination',
   templateUrl: './pagination.component.html',
   styleUrls: ['./pagination.component.scss']
 })
-export class PaginationComponent implements OnInit {
+export class PaginationComponent implements OnInit,OnChanges {
   @Input() numPage = 0  ;
-
   @Output() numPageEvent = new EventEmitter<any>();
-  clickNum : any
-  status: boolean = false;
+
+
+  numChanged: number | any;
 
   bntStyle: string | undefined;
   constructor() { }
@@ -19,6 +19,11 @@ export class PaginationComponent implements OnInit {
     return new Array(numbers);
   }
   ngOnInit(): void {
+
+  }
+  ngOnChanges(): void {
+    this.numChanged = this.numPage
+
   }
 
   selectedIndex: number = 1;

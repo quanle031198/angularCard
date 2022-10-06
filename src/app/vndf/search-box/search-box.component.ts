@@ -17,6 +17,7 @@ export class SearchBoxComponent implements OnInit {
   }
 
   searchEvents(txtSearch:any){
+
     let searchInput =  txtSearch.target.value.trim().toUpperCase();
     let newArrSearch = this.listCardSearch.filter((s:any) => {
         if (s.name.toUpperCase().includes(searchInput)) {

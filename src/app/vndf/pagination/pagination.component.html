@@ -6,7 +6,7 @@
                 <div class="pagination-numbers-cls d-2">
                     <div class="pagination-render g-2">
                         <button src
-                          *ngFor="let num of counter(numPage) ;let i = index"
+                          *ngFor="let num of counter(numChanged) ;let i = index"
                           [attr.data-index]="i+1"
                           class="pagination-number"
                           [class.active]="selectedIndex === i+1"

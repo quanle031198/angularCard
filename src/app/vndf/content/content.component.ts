@@ -30,6 +30,9 @@ export class ContentComponent implements OnInit {
   paginatedData: any;
   dataByCategory: any;
   theNewCurrentPage :any;
+  totalPage = 0;
+  arrConect :any;
+
 
   catObj = [{name:'Flavour',slug:'flavour'},{name:'VDU', slug:'vdu'},{name:'VNF Indicator', slug:'vnf'} ]
   nameCate = ["flavour", "vdu", "vnf"];
@@ -38,6 +41,7 @@ export class ContentComponent implements OnInit {
   ngOnInit(): void {
     this.primitiveData = this.renderSampleData();
     this.filterByCategory();
+    this.arrConect = this.dataByCategory
   }
 
   renderSampleData = (amountOfModels = 80
@@ -82,7 +86,6 @@ export class ContentComponent implements OnInit {
       return result;
     }
 
-    totalPage = 0;
 
 
   filterByCategory(category: string = 'vdu'){
@@ -98,17 +101,18 @@ export class ContentComponent implements OnInit {
 
   handleNumPage(newCurrent:any){
     this.theNewCurrentPage = newCurrent;
-    this.paginatedData = this.paginate(this.dataByCategory, newCurrent);
+    this.paginatedData = this.paginate(this.arrConect, newCurrent);
     this.listOfItems = this.paginatedData.data;
-    console.log(this.listOfItems);
-
-
   }
 
   searchEvent(dataProductSearch: any){
+    this.arrConect = dataProductSearch
     this.paginatedData = this.paginate(dataProductSearch,this.currentPage);
     this.listOfItems = this.paginatedData.data;
     this.totalPage = this.paginatedData.totalPage;
   }
 
+  trans(i: any) {
+    // console.log("TRANSEND: ", i.activeIndex);
+  }
 }

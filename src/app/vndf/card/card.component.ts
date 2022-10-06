@@ -1,7 +1,5 @@
-import { Component, ViewEncapsulation, ViewChild, OnInit, Input } from "@angular/core";
-import { DisplayPrdService } from "src/app/display-prd.service";
-import { Products } from "src/app/products";
-import { SwiperComponent } from "swiper/angular";
+import { Component, ViewEncapsulation, ViewChild, OnInit, Input, OnChanges } from "@angular/core";
+import { Card } from "src/app/interface/Card";
 
 
 
@@ -11,14 +9,17 @@ import { SwiperComponent } from "swiper/angular";
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss'],
 })
-export class CardComponent implements OnInit {
-  @Input() cardDetail:any;
-  itemCards:any
+export class CardComponent implements OnInit,OnChanges {
+  @Input() cardDetail:Card | any;
+
+  newCardDetail : Card | any;
   constructor() { }
   ngOnInit(): void {
-     this.itemCards = this.cardDetail
   }
 
-  ngAfterViewInit(): void {
+  ngOnChanges(arrChange:any): void {
+  // console.log(arrChange.cardDetail.currentValue);
+
+
   }
 }
