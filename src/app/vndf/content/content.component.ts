@@ -101,9 +101,10 @@ export class ContentComponent implements OnInit {
 
   handleNumPage(newCurrent:any){
     this.theNewCurrentPage = newCurrent;
-    this.paginatedData = this.paginate(this.arrConect, newCurrent);
+    this.paginatedData = this.paginate(this.dataByCategory, newCurrent);
     this.listOfItems = this.paginatedData.data;
   }
+
 
   searchEvent(dataProductSearch: any){
     this.arrConect = dataProductSearch
@@ -113,6 +114,6 @@ export class ContentComponent implements OnInit {
   }
 
   trans(i: any) {
-    // console.log("TRANSEND: ", i.activeIndex);
+    console.log("TRANSEND: ", i.activeIndex);
   }
 }
