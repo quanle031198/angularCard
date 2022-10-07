@@ -109,7 +109,7 @@ export class ContentComponent implements OnInit {
 
   searchEvent(dataProductSearch: any){
     this.dataByCategory = dataProductSearch
-    this.paginatedData = this.paginate(this.dataByCategory,this.currentPage);
+    this.paginatedData = this.paginate(dataProductSearch,this.currentPage);
     this.listOfItems = this.paginatedData.data;
     this.totalPage = this.paginatedData.totalPage;
   }
