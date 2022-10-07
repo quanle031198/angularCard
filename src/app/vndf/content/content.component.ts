@@ -32,7 +32,7 @@ export class ContentComponent implements OnInit {
   theNewCurrentPage :any;
   totalPage = 0;
   arrConect :any;
-
+  // nameCateNew : any;
 
   catObj = [{name:'Flavour',slug:'flavour'},{name:'VDU', slug:'vdu'},{name:'VNF Indicator', slug:'vnf'} ]
   nameCate = ["flavour", "vdu", "vnf"];
@@ -103,17 +103,14 @@ export class ContentComponent implements OnInit {
     this.theNewCurrentPage = newCurrent;
     this.paginatedData = this.paginate(this.dataByCategory, newCurrent);
     this.listOfItems = this.paginatedData.data;
+
   }
 
 
   searchEvent(dataProductSearch: any){
-    this.arrConect = dataProductSearch
-    this.paginatedData = this.paginate(dataProductSearch,this.currentPage);
+    this.dataByCategory = dataProductSearch
+    this.paginatedData = this.paginate(this.dataByCategory,this.currentPage);
     this.listOfItems = this.paginatedData.data;
     this.totalPage = this.paginatedData.totalPage;
-  }
-
-  trans(i: any) {
-    console.log("TRANSEND: ", i.activeIndex);
   }
 }

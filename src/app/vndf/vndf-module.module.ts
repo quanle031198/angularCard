@@ -1,27 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { ContentComponent } from './content/content.component';
-import { CardComponent } from './card/card.component';
-import { HeadComponent } from './head/head.component';
-import { SearchBoxComponent } from './search-box/search-box.component';
-// import { ListCardComponent } from './list-card/list-card.component';
-import { PaginationComponent } from './pagination/pagination.component';
+import { NavBarModule } from './nav-bar/nav-bar.module';
+import { VndfComponent } from './vndf.component';
+import { ContentModule } from './content/content.module';
+import { HeadModule } from './head/head.module';
+import { SwiperModule } from 'swiper/angular';
+import { VndfRoutingModule } from './vndf-routing.module';
 
 
 
 @NgModule({
-  declarations: [
-    NavBarComponent,
-    ContentComponent,
-    CardComponent,
-    HeadComponent,
-    SearchBoxComponent,
-    PaginationComponent
-  ],
+  declarations: [ VndfComponent],
   imports: [
     CommonModule,
-    // HeaderModuleModule
+    NavBarModule,
+    ContentModule,
+    HeadModule,
+    VndfRoutingModule,
   ]
 })
 export class VndfModuleModule { }
