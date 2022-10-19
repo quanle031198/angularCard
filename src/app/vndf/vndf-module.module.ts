@@ -6,6 +6,8 @@ import { ContentModule } from './content/content.module';
 import { HeadModule } from './head/head.module';
 import { SwiperModule } from 'swiper/angular';
 import { VndfRoutingModule } from './vndf-routing.module';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 
@@ -17,6 +19,8 @@ import { VndfRoutingModule } from './vndf-routing.module';
     ContentModule,
     HeadModule,
     VndfRoutingModule,
+    Ng2SearchPipeModule,
+    NgxPaginationModule,
   ]
 })
 export class VndfModuleModule { }

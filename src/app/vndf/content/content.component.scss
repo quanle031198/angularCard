@@ -98,3 +98,58 @@
   width: 100%;
 }
 
+.pagination-side {
+  height: 60px;
+  padding: 5px;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  background: rgba(33, 37, 41, 0.5);
+  border-radius: 12px;
+
+}
+
+.ngx-pagination .current {
+  font-size: 1.1rem;
+  background-color: transparent;
+  border: none;
+  margin: 0.25rem 0.25rem;
+  cursor: pointer;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: .2rem;
+  color: white;
+}
+
+.ngx-pagination a{
+  font-size: 1.1rem;
+  margin: 0.25rem 0.25rem;
+  cursor: pointer;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: .2rem;
+  color: white;
+}
+
+.ngx-pagination a:hover, .ngx-pagination button:hover {
+  background: hsla(196, 100%, 36%, 0.577) !important;
+  border-radius: .2rem;
+  height: 2.5rem;
+  width: 2.5rem;
+}
+.ngx-pagination .pagination-next a:hover {
+  height: auto;
+  width: auto;
+}
+.ngx-pagination .pagination-previous a:hover {
+  width:auto !important;
+  height:auto !important;
+}
+.ngx-pagination .pagination-next a{
+  width:auto !important;
+  height:auto !important;
+}
+.ngx-pagination .pagination-previous a{
+  width:auto !important;
+  height:auto !important;
+}

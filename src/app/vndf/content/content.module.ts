@@ -5,6 +5,8 @@ import { SwiperModule } from 'swiper/angular';
 import { SearchBoxModule } from '../search-box/search-box.module';
 import { CardModule } from '../card/card.module';
 import { PaginationModule } from '../pagination/pagination.module';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 
@@ -17,7 +19,9 @@ import { PaginationModule } from '../pagination/pagination.module';
     SwiperModule,
     SearchBoxModule,
     CardModule,
-    PaginationModule
+    PaginationModule,
+    Ng2SearchPipeModule,
+    NgxPaginationModule,
 
   ],exports: [ContentComponent]
 })

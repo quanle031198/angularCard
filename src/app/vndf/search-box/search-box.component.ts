@@ -7,28 +7,20 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class SearchBoxComponent implements OnInit {
 
-  @Input() listCardSearch:any;
-  @Output() dataSearchEvents = new EventEmitter<any>()
+  // @Input() listCardSearch:any;
+  // @Output() dataSearchEvents = new EventEmitter<any>()
 
+  nameProduct:string = '';
   constructor() { }
 
   ngOnInit(): void {
 
   }
+  @Output()
+  searchTextChange: EventEmitter<string> = new EventEmitter<string>();
 
-  searchEvents(txtSearch:any){
-
-    let searchInput =  txtSearch.target.value.trim().toUpperCase();
-    let newArrSearch = this.listCardSearch.filter((s:any) => {
-        if (s.name.toUpperCase().includes(searchInput)) {
-            return s;
-        }
-    })
-    this.dataSearchEvents.emit(newArrSearch)
-
-
-
+  onSearchTextChange(){
+    this.searchTextChange.emit(this.nameProduct);
   }
-
 
 }

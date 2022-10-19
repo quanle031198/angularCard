@@ -1,68 +1,43 @@
 <div class="main-content__right-box">
   <div class="row align-items-start ">
     <div class="col-12 main-content__right-header">
-      <swiper
-
-      (swiper)="thumbsSwiper = $event"
-      [spaceBetween]="0"
-      [slidesPerView]="3"
-      [freeMode]="false"
-        [watchSlidesProgress]="true"
-
-        id="sync2"
-         class="mySwiper">
+      <swiper (swiper)="thumbsSwiper = $event" [spaceBetween]="0" [slidesPerView]="3" [freeMode]="false"
+        [watchSlidesProgress]="true" id="sync2" class="mySwiper">
         <ng-template swiperSlide *ngFor="let category of catObj">
-          <h3 (click)="filterByCategory(category.slug)">{{ category.name }}</h3>
+          <h3>{{ category.name }}</h3>
         </ng-template>
       </swiper>
     </div>
     <div
       class="col-12 main-content__right-search d-flex justify-content-lg-end justify-content-xs-center justify-content-sm-around align-items-center ">
       <div class="pad-left search-icon-box">
-        <app-search-box [listCardSearch]="dataByCategory" (dataSearchEvents)="searchEvent($event)"></app-search-box>
+        <app-search-box (searchTextChange)="searchEvent($event)"></app-search-box>
       </div>
       <div class="pad-left filter"><img src="../../../assets/icon/filter.png" alt=""></div>
       <div class="pad-left change-view"><img src="../../../assets/icon/view-block.png" alt="">
       </div>
     </div>
     <div class="col-12 main-content__right-product d-flex justify-content-end align-items-center p-0 ">
-      <swiper
-      [spaceBetween]="0"
-      [slidesPerView]="1"
-      [initialSlide]="1"
-      [navigation]="false"
-        [thumbs]="{ swiper: thumbsSwiper }"
-        class="mySwiper2">
+      <swiper [spaceBetween]="0" [slidesPerView]="1" [initialSlide]="1" [navigation]="false"
+        [thumbs]="{ swiper: thumbsSwiper }" class="mySwiper2">
         <ng-template *ngFor="let item of nameCate" swiperSlide>
           <div class="row products g-2">
             <div class="row rend products g-2">
-              <div *ngFor="let item of listOfItems" class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-12">
+              <div *ngFor="let item of listOfItems | paginate:{itemsPerPage:8, currentPage:p};" class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-12">
                 <app-card [cardDetail]="item"></app-card>
               </div>
             </div>
-            <app-pagination [numPage]="totalPage" (numPageEvent)="handleNumPage($event)"></app-pagination>
+            <div class="pagination-side">
+              <div class="row align-items-start ">
+                <div class="col-12">
+                  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+                </div>
+              </div>
+            </div>
+            <!-- <app-pagination ></app-pagination> -->
           </div>
         </ng-template>
-        <!-- <ng-template  swiperSlide>
-          <div class="row products g-2">
-            <div class="row rend products g-2">
-              <div *ngFor="let item of listOfItems" class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                <app-card [cardDetail]="item"></app-card>
-              </div>
-            </div>
-            <app-pagination [numPage]="totalPage" (numPageEvent)="handleNumPage($event)"></app-pagination>
-          </div>
-        </ng-template>
-        <ng-template  swiperSlide>
-          <div class="row products g-2">
-            <div class="row rend products g-2">
-              <div *ngFor="let item of listOfItems" class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                <app-card [cardDetail]="item"></app-card>
-              </div>
-            </div>
-            <app-pagination [numPage]="totalPage" (numPageEvent)="handleNumPage($event)"></app-pagination>
-          </div>
-        </ng-template> -->
       </swiper>
     </div>
   </div>

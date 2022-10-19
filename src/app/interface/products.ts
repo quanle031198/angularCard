@@ -1,21 +1,20 @@
 export class Products {
-  // id: number | undefined ;
-  fullname: string | undefined;
-  chip: string | undefined;
-  memory: string | undefined;
-  ram: string | undefined;
-  motion: number | undefined;
-  category: string | undefined;
+  data: any;
+  id: number ;
+  name: string | undefined;
+  avatar: string | undefined;
+  ram :number | undefined;
+  cpu :number | undefined;
+  hdd :number | undefined;
 
-  constructor(id: number | undefined,fullname: string | undefined,chip: string | undefined,memory: string | undefined,ram: string | undefined,motion: number | undefined,category: string | undefined){
-    // this.id = id;
-    this.fullname = fullname;
-    this.chip = chip;
-    this.memory = memory;
+  constructor(data: any, id: number , name: string | undefined,avatar: string | undefined,ram :number | undefined,cpu :number | undefined,hdd :number | undefined){
+    this.data = data;
+    this.id = id;
+    this.name = name;
+    this.avatar = avatar;
     this.ram = ram;
-    this.motion = motion;
-    this.category = category;
-
+    this.cpu = cpu;
+    this.hdd = hdd;
   }
 }
 
