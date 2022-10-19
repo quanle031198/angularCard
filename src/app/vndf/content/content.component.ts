@@ -1,9 +1,10 @@
-import { Component, ViewEncapsulation, OnInit  } from "@angular/core";
+import { Component, ViewEncapsulation, OnInit, ViewChild  } from "@angular/core";
 
 // import Swiper core and required modules
 import SwiperCore, { FreeMode, Navigation, Thumbs } from "swiper";
 import { PaginateData } from "src/app/interface/PaginateData";
 import { Card } from "src/app/interface/Card";
+import { SearchBoxComponent } from "../search-box/search-box.component";
 
 
 // install Swiper modules
@@ -20,6 +21,8 @@ SwiperCore.use([FreeMode, Navigation, Thumbs]);
 
 
 export class ContentComponent implements OnInit {
+  @ViewChild(SearchBoxComponent) childSearch: SearchBoxComponent | any;
+
   thumbsSwiper: any;
 
   currentPageNew: number | undefined;
@@ -32,7 +35,6 @@ export class ContentComponent implements OnInit {
   theNewCurrentPage :any;
   totalPage = 0;
   arrConect :any;
-  // nameCateNew : any;
 
   catObj = [{name:'Flavour',slug:'flavour'},{name:'VDU', slug:'vdu'},{name:'VNF Indicator', slug:'vnf'} ]
   nameCate = ["flavour", "vdu", "vnf"];
@@ -41,7 +43,7 @@ export class ContentComponent implements OnInit {
   ngOnInit(): void {
     this.primitiveData = this.renderSampleData();
     this.filterByCategory();
-    this.arrConect = this.dataByCategory
+
   }
 
   renderSampleData = (amountOfModels = 80
@@ -103,14 +105,13 @@ export class ContentComponent implements OnInit {
     this.theNewCurrentPage = newCurrent;
     this.paginatedData = this.paginate(this.dataByCategory, newCurrent);
     this.listOfItems = this.paginatedData.data;
-
   }
 
 
   searchEvent(dataProductSearch: any){
-    this.dataByCategory = dataProductSearch
     this.paginatedData = this.paginate(dataProductSearch,this.currentPage);
-    this.listOfItems = this.paginatedData.data;
-    this.totalPage = this.paginatedData.totalPage;
+    // this.listOfItems = this.paginatedData.data;
+    // this.totalPage = this.paginatedData.totalPage;
+    return this.paginatedData
   }
 }

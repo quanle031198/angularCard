@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, ViewChild, OnInit, Input, OnChanges } from "@angular/core";
+import { Component, OnInit, Input, OnChanges } from "@angular/core";
 import { Card } from "src/app/interface/Card";
 
 

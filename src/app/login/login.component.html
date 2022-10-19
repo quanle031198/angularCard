@@ -1,0 +1,52 @@
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100">
+            <form class="login100-form validate-form">
+                <span class="login100-form-title p-b-26">
+                    Welcome
+                </span>
+                <span class="login100-form-title p-b-48">
+                    <p>A</p>
+                </span>
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" action="">
+                    <div class="wrap-input100 validate-input form-group">
+                        <input formControlName="username" class="input100 inputf" type="text" name="username" />
+                        <span class="focus-input100" data-placeholder="Username"></span>
+                    </div>
+                    <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert alert-danger mb-3">
+                        <div *ngIf="username.errors?.['required']" class="text-danger ">
+                            Username is required.
+                        </div>
+                    </div>
+                    <div class="wrap-input100 validate-input form-group" data-validate="Enter password">
+                        <input formControlName="password" class="input100 inputf" type="password" name="pass" />
+                        <span class="focus-input100" data-placeholder="Password"></span>
+                    </div>
+                    <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger mb-3">
+                        <div *ngIf="password.errors?.['required']" class="text-danger">
+                            Password is required.
+                        </div>
+                    </div>
+                    <div class="container-login100-form-btn form-group">
+                        <div class="wrap-login100-form-btn">
+                            <div class="login100-form-bgbtn"></div>
+                            <button class="login100-form-btn" [disabled]="loginForm.invalid">
+                                Login
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="text-center p-t-115">
+                    <span class="txt1">
+                        Don’t have an account?
+                    </span>
+                    <a class="txt2" href="#">
+                        Sign Up
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div id="dropDownSelect1"></div>
