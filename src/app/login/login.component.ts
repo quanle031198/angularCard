@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import * as $ from 'jquery';
+import { NgToastService } from 'ng-angular-popup';
 import { AuthService } from '../service/auth.service';
 
 @Component({
@@ -17,7 +18,7 @@ export class LoginComponent implements OnInit {
   checkRouterLogin: boolean = false;
 
 
-  constructor(private formBuilder: FormBuilder, public as:AuthService, private router: Router) { }
+  constructor(private formBuilder: FormBuilder, public as:AuthService, private router: Router, private toast:NgToastService) { }
 
   ngOnInit(): void {
     this.addClassInput();
@@ -39,13 +40,13 @@ export class LoginComponent implements OnInit {
         return a.username === this.loginForm.value.username && a.password === this.loginForm.value.password;
       });
       if(user){
-        alert('Login Success !');
+        this.toast.success({detail:"Success Message",summary:"Login is Success",duration:5000})
         this.checkRouterLogin = true;
         this.checkRouterLogin ? this.as.routerIn() : this.as.routerOut()
         this.loginForm.reset();
         this.router.navigate(['main'])
       }else{
-        alert('Login Fail !');
+        this.toast.error({detail:"Error Message",summary:"Login Fail, Try again",duration:5000})
         this.loginForm.reset();
       }
     }, err => {

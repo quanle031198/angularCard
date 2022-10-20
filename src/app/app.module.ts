@@ -6,6 +6,7 @@ import { VndfModuleModule } from './vndf/vndf-module.module';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginModule } from './login/login.module';
+import { NgToastModule } from 'ng-angular-popup';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { LoginModule } from './login/login.module';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    LoginModule
+    LoginModule,
+    NgToastModule
   
 
   ],
