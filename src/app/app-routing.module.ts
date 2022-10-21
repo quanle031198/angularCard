@@ -8,7 +8,10 @@ import { HandleRouterGuard } from './guard/handle-router.guard';
 const routers: Routes = [
   {path: '',pathMatch: 'full', redirectTo:'login'},
   {path: 'login', component:LoginComponent},
-  {path: 'main', component:VndfComponent, canActivate: [HandleRouterGuard]},
+  {path: 'main',
+   component:VndfComponent, 
+   canActivate: [HandleRouterGuard]
+  },
 
   ]
 
