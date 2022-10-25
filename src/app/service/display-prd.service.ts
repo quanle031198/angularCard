@@ -19,6 +19,10 @@ export class DisplayPrdService {
     )
   }
 
+  getPrdSearch(username: string) : Observable<Products>{ 
+    return this.http.get<Products>(`${this.url}?search=${username}`)
+  }
+
   errorHandler(error:any) {
     let errorMessage = '';
     if(error.error instanceof ErrorEvent) {

@@ -6,11 +6,11 @@ import { VndfComponent } from './vndf/vndf.component';
 import { HandleRouterGuard } from './guard/handle-router.guard';
 
 const routers: Routes = [
-  {path: '',pathMatch: 'full', redirectTo:'login'},
+  {path: '',pathMatch: 'full', redirectTo:'main'},
   {path: 'login', component:LoginComponent},
   {path: 'main',
    component:VndfComponent, 
-   canActivate: [HandleRouterGuard]
+  //  canActivate: [HandleRouterGuard]
   },
 
   ]
